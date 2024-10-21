@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Details</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffcc00, #ff6600);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      transition: transform 0.3s;
+      margin: 10px;
+    }
+    form:hover {
+      transform: scale(1.02);
+    }
+    h2 {
+      text-align: center;
+      color: #ff6600;
+      margin-bottom: 20px;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="file"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      font-size: 16px;
+    }
+    form input[type="text"]:focus,
+    form input[type="number"]:focus,
+    form input[type="file"]:focus {
+      border-color: #ff6600;
+      box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+      outline: none;
+    }
+    form input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    form input[type="submit"]:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      color: #333;
+    }
+  </style>
+</head>
+<body >
+<form action="addRestaurant" method="post" enctype="multipart/form-data">
+  <h2>Restaurant Details</h2>
+
+  <label for="restName">Restaurant Name</label>
+  <input type="text" id="restName" name="restName" required>
+
+  <label for="cuisine">Cuisine</label>
+  <input type="text" id="cuisine" name="cuisine" required>
+
+  <label for="deliveryTime">Delivery Time</label>
+  <input type="number" id="deliveryTime" name="deliveryTime" required>
+
+  <label for="ratings">Ratings</label>
+  <input type="number" id="ratings" name="ratings" required>
+
+  <label for="isActive">Is Active</label>
+  <input type="text" id="isActive" name="isActive" required>
+
+  <!-- New image upload field -->
+  <label for="restaurantImage">Upload Restaurant Image</label>
+  <input style="border: none" type="file" id="restaurantImage" name="restaurantImage" accept="image/*">
+
+  <input style="margin-top: 1rem" type="submit" value="Submit">
+</form>
+</body>
+</html>
